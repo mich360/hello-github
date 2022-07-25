@@ -4,24 +4,72 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel=”stylesheet” href=”  /style.css”/>
+  <!-- <link rel=”stylesheet” href=”https://自分のGitHubのユーザー名.github.io/GitHubで付けたプロジェクト名/style.css”/> -->
+    <style type="text/css" media="screen, print">
+    @font-face {
+      font-family: "Bitstream Vera Serif Bold";
+      src: url("https://mdn.mozillademos.org/files/2468/VeraSeBd.ttf");
+    }
+    pre { 
+      font-size: 18px;
+      font-family: "Bitstream Vera Serif Bold", serif }
+  </style>
+    
+  
+  <title>GIT</title>
 </head>
 <body>
-    <pre>
-  git version   プリインストール確認　最初に git init でリポジトリを作成    
-  git -v        と打ち　バージョンの確認
-  git clone     の後にコピーしたURL( githubを起動しリポジトリを作り、HTML のURL )
-  git add -A    git管理下のディレクトリの、全ての「追加・変更・削除」がaddされます。git add –all も同じ意味です。
-  git add --all 上 同じこと 
-  git checkout	 チェックアウト（ブランチの作成）
-  git add	      ステージングエリアにファイルを追加
-  git commit	  gitレポジトリにファイルをコミット
-  git merge	    ブランチを統合
-  git status	  現在の状態を確認
+    <pre >
+  git version           プリインストール確認　最初に git init でリポジトリを作成    
+  git -v                と打ち　バージョンの確認
+
+  ls                     リスとセグメント     今いるところ
+  cd                    チェンジディレクトリー　移動させる
+  pwd                  プレゼントワーキングディレクトリー　  ・・/今いるディレクトリー/・・
+
+  mkdir                メイクディレクトリー        フォルダー　作成
+  touch                 タッチ                    ファイル   作成
+  vim                   ビム                      テキストエディター　（搭載） vi 同じこと
+  i                        insert キーボードコマンド　
+  escボタン押         insert 取り消し　戻る
+  :wq                    保存して終える
+  q                        終了
+  cat                      確認する
+  ls                       🔼　キーボード　コマンドヒストリィでキー押す
+  ls -l                    詳細
+  ls -lh
+  man                      マニアル見る
+  cd  ..                   戻る
+  cd   /                   絶対パスの先端
+  cd   ~                   チルダー
+  git clone             の後にコピーしたURL( githubを起動しリポジトリを作り、HTML のURL )
+  git add -A            git管理下のディレクトリの、全ての「追加・変更・削除」がaddされます。git add –all も同じ意味です。
+  git add --all         上 同じこと 
+  git checkout	    チェックアウト（ブランチの作成）
+  git add	            ステージングエリアにファイルを追加
+  git commit	     gitレポジトリにファイルをコミット
+  git merge	            ブランチを統合
+  git status	            現在の状態を確認
+
+  date                     日付
+  cal                      カレンダー機能
 
 
 </pre>
-    <p>ターミナルにて、git push origin masterではなく、git push origin mainと入力すると、無事リモートリポジトリにpush</p>
+<p>githubにアップロード一例</p>
+    <p style="font-size: 1em;">ターミナルにて、git push origin masterではなく、git push origin mainと入力すると、無事リモートリポジトリにpush</p>
+    
+    <pre>
+      cd [ドラッグ＆ドロップ]  
+      git add  -A             (git add  . )
+      git commit -m " comit"
+      git fetch origin  
+      git merge
+      git push origin main
+
+
+    </pre>
 
 
 
