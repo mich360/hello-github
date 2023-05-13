@@ -200,6 +200,163 @@ git fetch origin" は、
     git pull origin master
     このコマンドは、リモートリポジトリの master ブランチから変更をダウンロードして、自分のローカルリポジトリの master ブランチに反映します。
     このコマンドを実行する前に、変更をダウンロードする前に、自分のローカルリポジトリの変更をコミットしておくことをお勧めします。
+    
+<h3>リモートをローカルに反映する</h3>    
+git pull 　　remote-name 　remote-branch:　 local-branch
+これを実行しよう。
+
+
+make-the-form　githubにあるこのフォルダーに
+Add a README 緑のこのボタン　コミットする
+
+
+cd git-dir/
+ls
+
+% 　cd make-the-form
+%　 ls
+vol1	vol10 vol2	vol3	vol4	vol5	vol6	vol7	vol8	vol9
+　　　　　　　　　　　　　　　　GitHubを開いてリポジトリを変えてみたREADME.mdを加えた
+%　 git remote
+origin　　　　　　　　　　　　　リモートリポジトリにはoriginという名前のものがある
+
+%　 git pull origin master:master
+　　　　　　　　　　　　　　　　リモートリポジトリからローカルリポジトリに同期して持って来る命令
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 954 bytes | 238.00 KiB/s, done.
+From https://github.com/mich360/make-the-form
+   fa9e954..e3f6126  master     -> master
+   fa9e954..e3f6126  master     -> origin/master
+warning: fetch updated the current branch head.
+fast-forwarding your working tree from
+commit fa9e954235dc76c9ae76a85dc44c2f0735f9f442.
+Already up to date.
+
+%  ls
+README.md	vol10		vol3		vol5		vol7		vol9
+vol1		vol2		vol4		vol6		vol8　　　　　　　　　　　　　README.md	が増えている　　　　　
+naomichimasumoto@naomichinoMacBook-Pro make-the-form % 
+
+
+リモートリポジトリーにプッシュ
+ローカルリポジトリのブランチをリモートリポジトリのブランチにプッシュする。
+git push remote-name  local-branch : remote-branch
+—git push origin master: master
+
+%  git remote 
+origin
+%  git remote rm origin
+%  git remote add origin  https://github.com~~      github上のうURLのコピーを貼り付け
+%  git remote 
+origin
+％　git push origin master: master  ローカルリポジトリのマスターブランチをリモートリポジトリーのマスターブランチにプシュ
+％　name 入力する
+%    password　入力する　　　　　するとギットハブ上ににファイルが反映されている。
+
+
+＃＃＃＃
+git pull origin master:masterとgit pull originは、Gitにおける異なるコマンドです。
+
+git pull origin master:masterは、リモートリポジトリから現在のブランチに変更を取り込むコマンドです。ここでは、originはリモートリポジトリの名前、master:masterは、リモートリポジトリのmasterブランチから変更を取得し、ローカルのmasterブランチにマージすることを指します。
+git pull originは、現在のブランチの設定に従って、リモートリポジトリから変更を取り込むコマンドです。つまり、ブランチがmasterであれば、git pull originはリモートリポジトリのoriginからmasterブランチの変更を取得し、現在のブランチにマージします。
+つまり、git pull origin master:masterは、originリポジトリのmasterブランチから変更を取得し、ローカルのmasterブランチにマージするのに対して、git pull originは現在のブランチの設定に従ってリモートリポジトリから変更を取得し、現在のブランチにマージします。
+
+
+
+
+
+Gitで現在のブランチの設定を知るには、以下のコマンドを使用します。
+
+code：
+　　　　git branch
+
+上記のコマンドを実行すると、現在のブランチ名の前に*が表示されます。例えば、以下のようになります。
+
+* main 
+feature-branch 
+develop
+
+上記の例では、現在のブランチはmainであり、feature-branchとdevelopという他のブランチが存在しています。また、*マークが現在のブランチを示しています。
+また、git statusコマンドを実行することでも、
+現在のブランチの状態を確認できます。
+git statusコマンドは、現在のブランチがどのコミットに基づいているか、変更されたファイルがあるか、
+コミットされていない変更があるかなど、現在のリポジトリの状態に関する情報を提供します。
+
+
+ローカルリポジトリは、
+通常、ユーザーが指定した場所に保存されます。
+Gitを使用する場合、ローカルリポジトリは、Gitが初期化されたディレクトリ内に保存されます。
+つまり、リポジトリの場所は、コマンドラインやGitクライアントを使用して指定されます。
+Gitが初期化された場所は、ユーザーが指定することができます。
+その場合、ローカルリポジトリは、指定された場所に保存されます。
+たとえば、Cドライブの直下に保存することもできますが、通常はこのような場所に保存されることはありません。
+代わりに、ユーザーのドキュメントフォルダ内に保存されることが多いです。
+ただし、一般的に、Gitのリポジトリは、コンピュータのローカルストレージ内に保存されるため、
+ユーザーが任意の場所に保存することができます。したがって、
+ローカルリポジトリが保存されている場所は、ユーザーが指定した場所になります。
+
+
+Gitのリポジトリを初期化するには、
+git initコマンドを使用します。このコマンドを使用すると、現在のディレクトリがGitのリポジトリとして初期化されます。
+例えば、以下のコマンドを実行することで、現在のディレクトリをGitのリポジトリとして初期化することができます。
+
+cd /path/to/directory 
+git init
+この場合、Gitのリポジトリは/path/to/directoryディレクトリ内に作成されます。
+ただし、git initコマンドには、--bareオプションを付けることもできます。
+この場合、作成されたリポジトリは、ワーキングツリーを持たない「裸の」リポジトリになります。
+また、GitクライアントやGitHub Desktopを使用する場合は、通常、新しいリポジトリを作成することができます。
+この場合、リポジトリの場所は、クライアントやデスクトップアプリケーションが提示する画面上で指定することができます。
+通常、指定された場所に、Gitのリポジトリが作成されます。
+
+cd /path/to/directoryは、コマンドの例で使用されるパスの表記方法で、
+実際のパス名を示すものではありません。/path/to/directoryは、例として与えられた仮想のパスで、
+実際のファイルまたはディレクトリの場所を表すパス名に置き換える必要があります。
+
+Gitのリポジトリをデスクトップに作成する場合は、以下の手順を実行してください。
+1. デスクトップに移動します。
+　　　　　cd ~/Desktop
+2. git initコマンドを使用して、リポジトリを初期化します。
+　　　　　git init
+このコマンドを実行すると、デスクトップ上に新しいGitリポジトリが作成されます。
+リポジトリが作成された後、git addコマンドやgit commitコマンドを使用して、ファイルやディレクトリをリポジトリに追加し、
+コミットすることができます。また、リモートリポジトリを作成し、ローカルリポジトリとリモートリポジトリを同期することもできます。
+
+実際のファイルまたはディレクトリの場所を表すパス名に置き換える必要があります。デスクトップの場合
+
+cd C:\Users\YourUserName\Desktop
+cd ~/Desktop
+
+git initコマンドに--bareオプションを付けることで、
+"裸"のリポジトリを作成することができます。"裸"のリポジトリは、通常のGitリポジトリとは異なり、ワークツリーを持たず、
+コミットの履歴のみを管理する特殊なリポジトリです。主に、
+リモートリポジトリとして使用されます。
+以下は、--bareオプションを使用してGitリポジトリを作成する例です。
+
+git init --bare /path/to/repository.git
+
+この例では、/path/to/repository.gitという名前のディレクトリに、"裸"のGitリポジトリが作成されます。
+このリポジトリには、ワークツリーが存在しないため、ファイルを直接変更することはできません。
+代わりに、git pushコマンドを使用して、ローカルリポジトリからリモートリポジトリに変更内容をプッシュすることができます。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
 
 
 
