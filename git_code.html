@@ -210,28 +210,27 @@ cd git-dir/
 ls
 % 　cd make-the-form
 %　 ls
-vol1	vol10 vol2	vol3	vol4	vol5	vol6	vol7	vol8	vol9
+               vol1	vol10 vol2	vol3	vol4	vol5	vol6	vol7	vol8	vol9
 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　GitHubを開いてリポジトリを変えてみたREADME.mdをコミット加えた
 %　 git remote
-origin　　　　　　　　　　　　　　　　　　　リモートリポジトリにはoriginという名前のものがある
-%　 <b>git pull origin master:master</b>
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　リモートリポジトリからローカルリポジトリに同期して持って来る命令
-remote: Enumerating objects: 3, done.
-remote: Counting objects: 100% (3/3), done.
-remote: Compressing objects: 100% (3/3), done.
-remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
-Unpacking objects: 100% (3/3), 954 bytes | 238.00 KiB/s, done.
-From https://github.com/mich360/make-the-form
-   fa9e954..e3f6126  master     -> master
-   fa9e954..e3f6126  master     -> origin/master
-warning: fetch updated the current branch head.
-fast-forwarding your working tree from
-commit fa9e954235dc76c9ae76a85dc44c2f0735f9f442.
-Already up to date.
+        origin　　　　　#リモートリポジトリにはoriginという名前のものがある
+%　 <b>git pull origin master:master   #　リモートリポジトリからローカルリポジトリに同期して持って来る命令 以下の画面で OK</b>
+          remote: Enumerating objects: 3, done.
+          remote: Counting objects: 100% (3/3), done.
+          remote: Compressing objects: 100% (3/3), done.
+          remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+          Unpacking objects: 100% (3/3), 954 bytes | 238.00 KiB/s, done.
+          From https://github.com/mich360/make-the-form
+             fa9e954..e3f6126  master     -> master
+             fa9e954..e3f6126  master     -> origin/master
+          warning: fetch updated the current branch head.
+          fast-forwarding your working tree from
+          commit fa9e954235dc76c9ae76a85dc44c2f0735f9f442.
+          Already up to date.
 
 %  ls
-README.md	vol10		vol3		vol5		vol7		vol9
-vol1		vol2		vol4		vol6		vol8　　　　　　　　　　　　　　　　README.md	が増えている　　　　　
+          README.md	vol10		vol3		vol5		vol7		vol9
+          vol1		vol2		vol4		vol6		vol8　　　　　　　　　　　　　　　　README.md	が増えている　　　　　
 <h3>ローカルをリモートに反映する</h3> 
 リモートリポジトリーにプッシュ
 つまりローカルリポジトリのブランチをリモートリポジトリのブランチにプッシュする。
