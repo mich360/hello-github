@@ -144,6 +144,27 @@ revision =リビジョンとは、改訂、改正、改訂版などの意味、�
     <p>リポジトリーをgithubで確認できる</p>
 	<h3>git</h3>
 	<p><a href="https://mich360.github.io/hello-github/git_code.html" target="_blank">gitコマンドみる！</a></p>
+          <pre>
+	  <b>GitHubにアップロードする方法</b>
+	  
+	  　　　　　　　　　　　　git init
+		git add .
+		git commit -m "commit"
+		git remote add origin リポジトリのURL
+		git fetch origin
+		git merge origin/main
+		git push -u origin main
+		
+		
+		fetch
+		リモートリポジトリの最新の変更をローカルに取得し、変更内容や衝突の有無を確認することができます。
+		fetchを省略した場合、リモートの変更を事前に把握できずに直接pushすることになります。
+		　
+		指定したリモートリポジトリが見つからないremote: Repository not found.
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　git remote set-url origin 新しいリポジトリのURL  で改善する。
+
+
+	  </pre>
 
 
  <div>
