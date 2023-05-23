@@ -89,8 +89,8 @@ Pull Request（プルリクエスト）とは、Git などのバージョン管�
 
 		<h2>GitHub  Desktop</h2><!--ここから　GitHub  Desktop ===========================-->
 
-		GUI（Graphical User Interface：マウスメインの操作）が可能　ちなみにCUI（Character User Interface：いわゆる黒画面）
-		
+		<P>GUI (Graphical User Interface:マウスメイン・指の操作が )　ちなみにCUI（Character User Interface:キーボードで操作いわゆる黒画面）</P>
+		<P>通常は、通常は、画面左上　🔽 　から　Add  Clone Repository と進む  作業するフォルダーから始める</P>
 		<p>初めてGitHubにアップロードする場合にはGitHub Desktop起動後メニューバーの「File」→「New Repository」と進む</p>
 		<p>リポジトリを作成するには、まず「Create New Repository」を記述ます。
 		<br><pre>Name(リポジトリ名)は「xxx.github.io」の形になるもので、Description(説明)の欄には任意で説明を加えます。
@@ -102,38 +102,37 @@ Pull Request（プルリクエスト）とは、Git などのバージョン管�
 		<p><a href="https://ferret-plus.com/8498?page=3">参考サイト2</a></p>
 		<p><a href="https://digitaldiy.jp/article/programming/5141/">参考サイト3</a></p>
 		<pre>
-			Git ignore：バージョン管理で保存したくない、ローカルリポジトリ内で無視するファイルを指定するためのカスタムファイルを追加します
-		    License   ：リポジトリの LICENSE ファイルにオープンソースライセンスを追加します
-	    </pre>
-		<br>リポジトリを作成したら、それに対して開発を進めていくことになります。
-		<br>ローカル環境にあるリポジトリでファイルの追加・更新・削除を行って、コミット(リポジトリに登録)します。
-		<br>コミットはバックアップのように一日一回行うといったものでなく、 タイミングは機能追加したり、バグ修正したりといった意味があるまとまりで行います。
-		<br>ローカル環境のフォルダに任意のコードや画像を入れると、GitHub Desktopのほうで反映されます。
-		<pre>
-ここで変更内容に対するコメントを入力すると、「Commit to xxx」ボタンが押せるようになります。
-クリックしてコミットを行います。
-変更した内容やコメントは、Historyで確認できるようになっています。
+　　　Git ignore：バージョン管理で保存したくない、ローカルリポジトリ内で無視するファイルを指定するためのカスタムファイルを追加します License   ：リポジトリの LICENSE ファイルにオープンソースライセンスを追加します
+	    
+		リポジトリを作成したら、それに対して開発を進めていくことになります。
+		ローカル環境にあるリポジトリでファイルの追加・更新・削除を行って、コミット(リポジトリに登録)します。
+		コミットはバックアップのように一日一回行うといったものでなく、 タイミングは機能追加したり、バグ修正したりといった意味があるまとまりで行います。
+		ローカル環境のフォルダに任意のコードや画像を入れると、GitHub Desktopのほうで反映されます。
+		
+　　　　　ここで変更内容に対するコメントを入力すると、「Commit to xxx」ボタンが押せるようになります。
+　　　　　クリックしてコミットを行います。
+　　　　　変更した内容やコメントは、Historyで確認できるようになっています。
 
-2. 同期してみよう
-ここで注意しないといけないのが、 変更内容はコミットではまだローカルのリポジトリーにあるだけということです。
-ローカルのリポジトリーの内容を GitHub のリポジトリーに反映する必要があります。
-<a href="https://digitaldiy.jp/article/programming/5141/#GitHub" target="_blank"rel="noopener noreferrer">参考：GitHub</a><!--https://www.marorika.com/entry/rel-noopener-noreferrer-->
-<a href="https://digitaldiy.jp/article/programming/5141/"target="_blank" rel="noopener noreferrer">：https://digitaldiy.jp/article/programming/5141/</a>
-<a href="https://ferret-plus.com/8498/"target="_blank" rel="noopener noreferrer">https://ferret-plus.com/8498  new</a>
+　　　　　2. 同期してみよう
+　　　　　ここで注意しないといけないのが、 変更内容はコミットではまだローカルのリポジトリーにあるだけということです。
+　　　　　ローカルのリポジトリーの内容を GitHub のリポジトリーに反映する必要があります。
+<a href="https://digitaldiy.jp/article/programming/5141/#GitHub" target="_blank"rel="noopener noreferrer">参考サイト</a><!--https://www.marorika.com/entry/rel-noopener-noreferrer-->
+<a href="https://digitaldiy.jp/article/programming/5141/"target="_blank" rel="noopener noreferrer">参考サイト</a>
+<a href="https://ferret-plus.com/8498/"target="_blank" rel="noopener noreferrer">参考サイト</a>
 <a href="/"target="_blank" rel="noopener noreferrer"></a>
 画面右上にある<mark>「Publish Repository」を実行することにより GitHub のリポジトリーと同期</mark>し、変更が反映されます。
 		</pre>
 		<p>画面の英訳</p>
 		<pre>
-edit=編集収納repository=［保存］場所、宝倉branch=枝、拡張するchanges=変更
-Summary（required）=まとめ（必須)description=説明fetch=連れて［取って］くる
-fetch origin=オリジン(原点)の取得fetch origin=最後に取得したもの
-current=現在の、最新の、進行中の
-revision =リビジョンとは、改訂、改正、改訂版などの意味、公開後に変更や修正 ・改訂版のことや、複数の識別する通し番号（リビジョン番号）を指す
-1.共有リポジトリから情報を個人リポジトリにPull
-2.プログラムを変更し、変更を個人リポジトリにCommit
-3.個人リポジトリから変更記録を共有リポジトリにPush
-*このPull→Commit→Pushを複数人で同時並行的に行*</pre>
+	edit=編集収納 repository=［保存］場所・宝倉 branch=枝、拡張する changes=変更
+	Summary（required）=まとめ(必須)  description=説明fetch=連れて［取って］くる
+	fetch origin=オリジン(原点)の取得  fetch origin=最後に取得したもの
+	current=現在の、最新の、進行中の
+	revision =リビジョンとは、改訂、改正、改訂版などの意味、公開後に変更や修正 ・改訂版のことや、複数の識別する通し番号（リビジョン番号）を指す
+	1.共有リポジトリから情報を個人リポジトリにPull
+	2.プログラムを変更し、変更を個人リポジトリにCommit
+	3.個人リポジトリから変更記録を共有リポジトリにPush
+	*このPull→Commit→Pushを複数人で同時並行的に行*</pre>
 		<a href="https://www.youtube.com/watch?v=kftqAritHyc" target="_blank">参考youtube</a>
 		</p>SNSの機能も！
 		<a href="https://github.com/lightsound/html-css-class/tree/master/004_Sidebar-responsive">しまぶーさんのhamburger</a>
