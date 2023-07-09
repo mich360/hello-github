@@ -178,14 +178,22 @@ Pull Request（プルリクエスト）とは、Git などのバージョン管�
 
 		　
 		指定したリモートリポジトリが見つからないremote: Repository not found.
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　git remote set-url origin 新しいリポジトリのURL  で改善する。
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　git remote set-url origin '新しいリポジトリのURL'  で改善する。
 					  
 		リモートリポジトリの場所を確認する
 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　git remote -v
 					  
-	リポジトリのURLを取得する
+	        リポジトリのURLを取得する
 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　git remote get-url origin
 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　現在のリポジトリに設定されている名前が「origin」のリモートリポジトリのURLを表示します
+
+		    git status    変更されたファイル、ステージングされたファイル、コッミトされてないなどの情報みる
+		  　　　　git branch    現在のブランチを *で表示
+		  　　　　git branch -v 　　　　　　　　現在のブランチを *で表示とコミット 
+		  　　　　git branch -r 　　　　　　　　リモートブランチ、origin/mainがあればmain(またはmaster)を追跡している
+                    git branch -r -v  リモートブランチ情報収集
+                    git remote -v     リモートリポジトリの名前　とURL
+	            git log       コミットの履歴	--oneline オプション  
 			  
 
 
