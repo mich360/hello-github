@@ -243,16 +243,16 @@ master:masterの部分は「ローカルブランチ名:リモートブランチ
 <p>
 具体的にどう使い分けますか</p>
 <p>
-git push origin master:masterとgit push origin masterの使い分けは、リモートリポジトリの構成やワークフローによって異なります。
+git push origin master:masterとgit push origin masterの使い分けは、リモートリポジトリの構成やワークフローによって異なります。</p>
 
-git push origin master:masterの使いどころ:
-
+<p><pre>git push origin master:masterの使いどころ:</pre></p>
+<p>
 リモートリポジトリに複数のブランチが存在し、特定のブランチに変更を反映させたい場合に使用します。
 ローカルのmasterブランチ以外のブランチの変更をリモートの特定のブランチにプッシュする必要がある場合に使用します。
 例えば、ローカルのfeatureブランチの変更をリモートのdevelopmentブランチにプッシュする場合、git push origin feature:developmentというように使用します。
 
-git push origin masterの使いどころ:
-
+<p><pre>git push origin masterの使いどころ:</pre></p>
+<p>
 リモートリポジトリに単一のデフォルトブランチが存在し、そのブランチに変更を反映させたい場合に使用します。
 ローカルのmasterブランチの変更をリモートリポジトリのデフォルトブランチにプッシュする必要がある場合に使用します。
 通常、リモートリポジトリのデフォルトブランチはoriginのmasterブランチです。そのため、単にgit push origin masterとコマンドを実行するだけで、ローカルのmasterブランチの変更がリモートのデフォルトブランチにプッシュされます。
