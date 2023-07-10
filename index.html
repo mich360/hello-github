@@ -18,9 +18,10 @@
 				125%
 			);
 		}
+		body{margin-left: 15px;}
 		div{
-		margin: 10px 500px 10px 10px;
-		width: 680px;} 
+		margin: 10px 10px 10px;} 
+		/* width: 680px; */
  </style>
 </head>
 <body>
@@ -161,57 +162,69 @@ Pull Request（プルリクエスト）とは、Git などのバージョン管�
 		git remote add origin リポジトリのURL
 		git fetch origin
 		git merge origin/main
-		git push -u origin main
+		git push -u origin main</pre>
+		<style>
+			.p,dt {
+				font-weight: bold;
+			}
+
+			dl,
+			dd {
+				font-size: 0.9rem;
+			}
+
+			dd {
+				margin-bottom: 1em;
+			}
+
+		</style>
 		
-		
-		fetch
-		リモートリポジトリの最新の変更をローカルに取得し、変更内容や衝突の有無を確認することができます。
-		fetchを省略した場合、リモートの変更を事前に把握できずに直接pushすることになります。
+			<p class="p">コマンド例:</p>
 
-		'git fetch 'はリモートリポジトリの変更を取得して、ローカルリポジトリの参照を最新の状態に更新します。
-		  ただし、実際のファイルや作業ディレクトリには直接的な変更は加えられません。
-		  ローカルリポジトリの変更を適用するには、git mergeやgit rebaseなどのコマンドを使用する必要があります。
-                   したがって、git fetchを実行しても、ローカルのmaster(main)ブランチ自体は直接的に更新されません。
-		  git fetchはリモートの変更を取得し、ローカルのorigin/master（リモートトラッキングブランチ）を最新の状態に更新します。
-		  その後、必要に応じてgit merge origin/masterなどのコマンドを使用して、ローカルのmasterブランチに反映させることができます。
-		  
+	<dl>
+		<dt>fetchとは</dt>
+		<dd>リモートリポジトリの最新の変更をローカルに取得し、変更内容や衝突の有無を確認することができます。</dd>
+		<dd>fetchを省略した場合、リモートの変更を事前に把握できずに直接pushすることになります</dd>
 
-		　
-		指定したリモートリポジトリが見つからないremote: Repository not found.
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　git remote set-url origin '新しいリポジトリのURL'  で改善する。
-					  
-		リモートリポジトリの場所を確認する
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　git remote -v
-					  
-	        リポジトリのURLを取得する
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　git remote get-url origin
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　現在のリポジトリに設定されている名前が「origin」のリモートリポジトリのURLを表示します
-
-		    git status       変更されたファイル、ステージングされたファイル、コッミトされてないなどの情報みる
-	            git branch       現在のブランチを *で表示
-	            git branch -v    現在のブランチを *で表示とコミット 
-	            git branch -r    リモートブランチ、origin/mainがあればmain(またはmaster)を追跡している
-                    git branch -r -v リモートブランチ情報収集
-                    git remote -v    リモートリポジトリの名前　とURL
-	            git log          コミットの履歴	--oneline オプション  
-			  
-
-
-	  </pre>
+		<dt>git fetch </dt>
+		<dd>リモートリポジトリの変更を取得して、ローカルリポジトリの参照を最新の状態に更新します。</dd>
+        <dd>ただし、実際のファイルや作業ディレクトリには直接的な変更は加えられません。</dd>
+        <dd>ローカルリポジトリの変更を適用するには、git mergeやgit rebaseなどのコマンドを使用する必要があります。</dd>
+        <dd>したがって、git fetchを実行しても、ローカルのmaster(main)ブランチ自体は直接的に更新されません。</dd>
+        <dd>git fetchはリモートの変更を取得し、<mark>ローカルのorigin/master（リモートトラッキングブランチ）</mark>を最新の状態に更新します。</dd>
+        <dd>その後、必要に応じてgit merge origin/masterなどのコマンドを使用して、ローカルのmasterブランチに反映させることができます。</dd>
+		<dt>git remote -v</dt>
+		<dd>リモートリポジトリの名前（'git remote'でもよい）　とURLを調べる。</dd>
+		<dt>git remote get-url origin</dt>
+		<dd>リポジトリのURLを取得する、つまり現在のリポジトリに設定されている名前が「origin」のリモートリポジトリのURLを表示します。</dd>
+		<dt>git remote set-url origin</dt>
+		<dd>指定したリモートリポジトリが見つからないremote: Repository not found.とエラーでたら
+			 '新しいリポジトリのURL'  で改善する。</dd>
+	</dl>
+    <dl>
+		<dt> git status</dt>		　
+		<dd> 変更されたファイル、ステージングされたファイル、コッミトされてないなどの情報みる</dd>
+		<dt>git branch</dt>       <dd>現在のブランチを *で表示</dd>
+		<dt>git branch -v</dt>    <dd>現在のブランチを *で表示とコミット </dd>
+		<dt>git branch -r</dt>    <dd>リモートブランチ、origin/mainがあればmain(またはmaster)を追跡している</dd>
+		<dt>git branch -r -v</dt> <dd>リモートブランチ情報収集</dd>
+		<dt>git remote -v</dt>    <dd>リモートリポジトリの名前　とURL</dd>
+		<dt>git log</dt>          <dd>コミットの履歴	--oneline オプション </dd> 
+   </dl>
 
 
  <div>
-	</a>
-	<p>
-		<a href="https://techacademy.jp/magazine/10274">git pullとは </a>     
-		<br> リモートリポジトリをローカルリポジトリに取り込む機能
-		<br> 自分のリポジトリだけ取り残されてしまわないように
-		<br> まず、空のディレクトリを作成します
-		<br>GitHub上でリモートリポジトリを作成し、以下のコマンドを打ち込む。
-		<pre><code>git remote add origin git@github.com:〇〇/sample.git</code>（〇〇/の部分は自分のユーザー名）</pre>
-		<br>リポジトリ内は新ファイルが入っています。
+	<h3><a href="https://techacademy.jp/magazine/10274">git pullとは </a> </h3>
+	<p>実例として <mark>sample</mark>という名前のリポジトリを追加する、GitHub上でリモートリポジトリを作成するには、以下のコマンドを打ち込む。</p>
+	<pre><code>git remote add origin git@github.com:mich360/<mark>sample</mark>.git</code></pre>
+	<p>（mich360/の部分は自分のユーザー名）アカウント名、<mark>sample</mark>.gitはリポジトリ名、を意味します。</p>
+	<p>originはエイリアス、リモートリポジトリで標準的使われるリポジトリ別名です。</p>
+	<p>git@github.com:はサイトURL'github.com'に対して操作する</p>
+		
+		
+	<p>リポジトリ内は新ファイルが入っています。
 		<br>それではpullしていきましょうローカルリポジトリ内で、以下のように打ち込んでください
-		<pre><code>git pull origin <main></main></code></pre>
+		<pre><code>git pull origin　main</code></pre>
 		<br>するとリモートリポジトリ内がローカルリポジトリにも反映。
   </p>
 	
