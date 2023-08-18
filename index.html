@@ -154,13 +154,13 @@ Pull Request（プルリクエスト）とは、Git などのバージョン管�
           <pre>
 	  <b>GitHubにアップロードする方法</b>
 	  
-	    git init
-		git add .
-		git commit -m "first commit"
-		git remote add origin リポジトリのURL
-		git fetch origin
-		git merge origin/main
-		git push -u origin main</pre>
+	    git init                            : 新ローカルリポジトリ初期化
+		git add .                           : 変更ファイルをステージングエリアに追加
+		git commit -m "first commit"        : ステージングエリアの変更をコミット
+		git remote add origin リポジトリのURL : URLを指定して、リモートリポジトリを追加 originという名前が使用、任意の名前を使うことができます
+		git fetch origin                    : リモートリポジトリから情報を取得しますが、この段階ではローカルブランチには影響を与えません。
+		git merge origin/main               : リモートリポジトリの main ブランチの変更をローカルの現在のブランチにマージします。この段階で main ブランチがない場合、新しいブランチが作成されます。
+		git push -u origin main             :  ローカルの main ブランチをリモートリポジトリの main ブランチにプッシュします。-u オプションは、リモートリポジトリを追跡するように設定します。初回のプッシュ時に必要です。</pre>
 		<style>
 			.p,dt {
 				font-weight: bold;
@@ -176,14 +176,7 @@ Pull Request（プルリクエスト）とは、Git などのバージョン管�
 			}
 
 		</style>
-<pre>	
-git init  : 新しいローカルリポジトリを初期化します。
-git add . : 変更したファイルをステージングエリアに追加します。
-git commit -m "first commit"  : ステージングエリアの変更をコミットします。
-git remote add origin リポジトリのURL  : リモートリポジトリのURLを指定して、リモートリポジトリを追加します。ここで origin という名前が使用されていますが、任意の名前を使うことができます。
-git fetch origin  : リモートリポジトリから情報を取得しますが、この段階ではローカルブランチには影響を与えません。
-git merge origin/main  : リモートリポジトリの main ブランチの変更をローカルの現在のブランチにマージします。この段階で main ブランチがない場合、新しいブランチが作成されます。
-git push -u origin main  : ローカルの main ブランチをリモートリポジトリの main ブランチにプッシュします。-u オプションは、リモートリポジトリを追跡するように設定します。初回のプッシュ時に必要です。
+
 </pre>	
 これらの手順を実行することで、新しいローカルリポジトリを作成し、それをリモートリポジトリに関連付けてコードをアップロードできます。ただし、手順の一部は状況によって変わることがありますので、適切に調整することが重要です。また、作業する前に適切なブランチを作成しておくことも大切です。
 <br>
