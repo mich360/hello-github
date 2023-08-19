@@ -273,10 +273,11 @@ git statusコマンドは、現在のブランチがどのコミットに基づ�
 
 
 <h3 id=" 2">移動cdして、 リポジトリを初期化</h3> 
-cd /ユーザーが指定した場所
-デスクトップへ移動場合
-cd C:\Users\YourUserName\Desktop
-cd ~/Desktop
+<p>cd /ユーザーが指定した場所</p>
+    <pre>
+デスクトップへ移動例
+　　　　　　　cd C:\Users\YourUserName\Desktop
+　　　　　　　cd ~/Desktop
 ローカルリポジトリが保存される場所は、ユーザーが指定した場所になります。
 
 git init
@@ -302,7 +303,7 @@ git init --bare /path/to/repository.git
 この例では、/path/to/repository.gitという名前のディレクトリに、"裸"のGitリポジトリが作成されます。
 このリポジトリには、ワークツリーが存在しないため、ファイルを直接変更することはできません。
 代わりに、git pushコマンドを使用して、ローカルリポジトリからリモートリポジトリに変更内容をプッシュすることができます。
-
+</pre>
 
 <a href="/hello-github/git_code.html">上に</a>
 
