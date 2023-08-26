@@ -157,13 +157,13 @@ Pull Request（プルリクエスト）とは、Git などのバージョン管�
 	  <h4 id=" 1">GitHubにアップロードする方法</h4><a href="https://mich360.github.io/hello-github/git_code.html" target="_blank">新しく作業をする前に確認する！</a>
 	
 	  
-git init                               : 新ローカルリポジトリ初期化
-		git add .                              : 変更ファイルをステージングエリアに追加
-		git commit -m "first commit"           : ステージングエリアの変更をコミット
-		git remote add origin リポジトリのURL      : URLを指定して、リモートリポジトリを追加 originという名前が使用、任意の名前を使うことができます
-		git fetch origin                       : リモートリポジトリから情報を取得しますが、この段階ではローカルブランチには影響を与えません。
-		git merge origin/main                  : リモートリポジトリの main ブランチの変更をローカルの現在のブランチにマージします。この段階で main ブランチがない場合、新しいブランチが作成されます。
-		git push -u origin main                :  ローカルの main ブランチをリモートリポジトリの main ブランチにプッシュします。-u オプションは、リモートリポジトリを追跡するように設定します。初回のプッシュ時に必要です。</pre>
+git init                                    : 新ローカルリポジトリ初期化
+ git add .                                  : 変更ファイルをステージングエリアに追加
+ git commit -m "first commit"               : ステージングエリアの変更をコミット
+ git remote add origin リポジトリのURL          : URLを指定して、リモートリポジトリを追加 originという名前が使用、任意の名前を使うことができます
+ git fetch origin                           : リモートリポジトリから情報を取得しますが、この段階ではローカルブランチには影響を与えません。
+ git merge origin/main                      : リモートリポジトリの main ブランチの変更をローカルの現在のブランチにマージします。この段階で main ブランチがない場合、新しいブランチが作成されます。
+ git push -u origin main                    :  ローカルの main ブランチをリモートリポジトリの main ブランチにプッシュします。-u オプションは、リモートリポジトリを追跡するように設定します。初回のプッシュ時に必要です。</pre>
 		<style>
 			.p,dt {
 				font-weight: bold;
