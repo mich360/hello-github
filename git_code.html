@@ -385,6 +385,39 @@ code
 変更をリモートリポジトリにプッシュ: コミットした変更をリモートリポジトリにプッシュして、他の開発者と共有します。
 code
            git push origin main
+
+
+ git pull origin mainを実行したらエラー
+From https://github.com/mich360/vite-project
+ * branch            main       -> FETCH_HEAD
+Updating 628fa1c..d54a92f
+error: Your local changes to the following files would be overwritten by merge:
+        src/App.css
+        src/App.jsx
+Please commit your changes or stash them before you merge.
+Aborting
+※commitするかstash しなさいと書いてある
+競合を解決するためのステップは以下の通りです：
+ローカルの変更をコミットまたは一時的に保存（stash）する。
+code
+     git add src/App.css src/App.jsx
+     git commit -m "一時的な変更のコミット"
+または
+code
+      git stash
+   
+どちらかを選んで実行します。前者は変更をコミットする方法で、後者は変更を一時的に退避させる方法です。
+プルコマンドを再実行してリモートの変更を取得。
+code
+      git pull origin main
+競合の解決: プルコマンドが正常に完了したら、競合が発生していないか確認します。競合がある場合、Gitは競合箇所を示すメッセージを表示します。
+競合の解決とコミット: 競合を解決し、変更を再度コミットします。
+code
+       git add src/App.css src/App.jsx
+       git commit -m "競合を解決"
+
+
+   
   </pre>
 
   
