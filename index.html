@@ -252,8 +252,23 @@ git init                                                   : 新ローカルリ�
 		<dt>git remote -v</dt>    <dd>リモートリポジトリの名前　とURL</dd>
 		<dt>git log</dt>          <dd>コミットの履歴	--oneline オプション </dd> 
    </dl>
+	<hr>
+      <pre>
+           ブランチを作成するために特別なリモートリポジトリが必要ではありません。ローカルリポジトリでブランチを作成できます。以下は、新しいブランチを作成するGitコマンドの例です：
+ code
+git branch new-branch-name
+	      
+これにより、"new-branch-name" という名前の新しいブランチが作成されます。作成したブランチに切り替えるには、次のコマンドを使用します：
 
-
+ code
+git checkout new-branch-name
+または、Gitの新しいバージョンでは以下の方法も利用できます：
+code
+git switch new-branch-name
+このようにして、リモートリポジトリがなくてもローカルでブランチを作成し、作業を進めることができます。ただし、リモートリポジトリを使用する場合、ブランチをリモートリポジトリにプッシュして共有することができます。
+	      
+      </pre>
+     <hr>
  <div>
 	<h3><a href="https://techacademy.jp/magazine/10274">git pullとは </a> </h3>
 	<p>実例として <mark>sample</mark>という名前のリポジトリを追加する、GitHub上でリモートリポジトリを作成するには、以下のコマンドを打ち込む。</p>
