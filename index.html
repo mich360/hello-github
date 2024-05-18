@@ -22,6 +22,20 @@
 		div{
 		margin: 10px 10px 10px;} 
 		/* width: 680px; */
+	p,
+	dt {
+	font-weight: bold;
+	}
+
+	dl,
+	dd {
+	font-size: 0.9rem;
+	}
+
+	dd {
+	margin-bottom: 1em;
+	}
+
  </style>
 </head>
 <body>
@@ -35,35 +49,51 @@
 			<a href="https://mich360.github.io/tableset.github.io/" target="_blank">-</a> |
 			
 			</nav>
-<hr>			
+<hr>	
+<nav>
+	<a href="https://mich360.github.io/hello-github/git_code.html">コマンド一覧</a> |	
+	<a href="# 1" target="_blank">GitHubに変更内容を反映させる方法</a>  |
+	<!-- <a href="https://mich360.github.io/hamburger.github.io/" target="_blank">hamburger.github.io</a> |
+	<a href="https://mich360.github.io/cssgrid/grid.html" target="_blank">CSS-Grid</a>  |
+	<a href="https://mich360.github.io/cssgrid/" target="_blank">Grid-2</a> |
+	<a href="https://mich360.github.io/tableset.github.io/" target="_blank">-</a> |
+	<a href="# 1"></a> -->
+	</nav>		
 		</header>
     
 <div> 
-	<h1>GitHub学ぶ</h1>
-	<span>GitHubに上げる　コマンド</span>
-	<pre>
-	git init                                                  
-        git add .                                                 
-        git commit -m "first commit"                            
-        git remote add origin リポジトリのURL                 
-        git fetch origin                                                      
-        git merge origin/main                                       
-        git push -u origin main   
+	<h1>GitHub</h1>
 
+	<h2>内容を最初に反映させる</h2>
 
-
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　-u オプションは、git push コマンドに付加されることがあるオプションで、次のように使われます：
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　code　　　　　　　　　　　git push -u 　　　　　<リモート名> 　　　　　<ブランチ名>
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　このオプションは、ブランチをリモートリポジトリに初めてプッシュする際に、リモートブランチとローカルブランチを紐づけるために使用されます。次のことが行われます：
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　リモートリポジトリにブランチをプッシュします。
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　自動的に紐づけられます。これにより、今後の git push や git pull コマンドを実行する際に、ブランチ名を明示的に指定せずに簡潔にコマンドを実行できます。
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　紐づけが行われると、以降の git push や git pull コマンドは、ローカルのブランチから対応するリモートブランチに自動的にプッシュまたはプルするようになります。
-		　　　　　　　　　　　　　　　　　　　　　これにより、コマンドを簡略化し、コードをリモートリポジトリと同期させるのが容易になります。
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　-u オプションは一度だけ使用する必要があり、以降のプッシュやプルでは省略することができます。たとえば、次回以降の git push は git push だけで十分です。
-</pre>
+<dl>
+  <dt>git init</dt>
+    <dd>   : 新ローカルリポジトリ初期化</dd>
+  <dt>git add .</dt>
+    <dd>: 変更ファイルをステージングエリアに追加</dd>
+  <dt>git commit -m "first commit"</dt>
+    <dd> : ステージングエリアの変更をコミット</dd>
+  <dt>git remote add origin リポジトリのURL</dt>
+    <dd>  : URLを指定して、リモートリポジトリを追加 originという名前が使用、任意の名前を使うことができます
+</dd>
+  <dt>git fetch origin</dt>
+    <dd> : リモートリポジトリから情報を取得しますが、この段階ではローカルブランチには影響を与えません。</dd>
+  <dt>git merge origin/main </dt>
+    <dd> : リモートリポジトリの main ブランチの変更をローカルの現在のブランチにマージします。この段階で main ブランチがない場合、新しいブランチが作成されます。</dd>
+  <dt>git push -u origin main</dt>
+    <dd>-u オプションは、git push コマンドに付加されることがあるオプション" git push -u 　<リモート名><ブランチ名>" </dd>	
+	<dd>このオプションは、ブランチをリモートリポジトリに初めてプッシュする際に、リモートブランチとロー自動的に紐づけられます。これにより、今後の git push や git pull コマンドを実行する際に、ブランチ名を明示的に指定せずに簡潔にコマンドを実行できます。
+		<br>紐づけが行われると、以降の git push や git pull コマンドは、ローカルのブランチから対応するリモートブランチに自動的にプッシュまたはプルするようになります。
+		<br>これにより、コマンドを簡略化し、コードをリモートリポジトリと同期させるのが容易になります。
+		<br>-u オプションは一度だけ使用する必要があり、以降のプッシュやプルでは省略することができます。たとえば、次回以降の git push は git push だけで十分です。
+		カルブランチを紐づけるために使用されます。リモートリポジトリにブランチをプッシュします。</dd>
+	<dd></dd>
+</dl>
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
 	<a href="#10">　以上のコマンドライン説明こちら</a>
+	<h2><a href="# 1">GitHubに変更内容を反映させる方法</a></h2>
 	<pre>
-GitHubとは登録してGitを使う gitとgithubは違います。<a href="# 1">GitHubに反映させる方法</a>
+GitHubとは登録してGitを使う gitとgithubは違います。
 gitはソースコードのバージョン管理
 Pull Request（プルリクエスト）とは、Git などのバージョン管理システムで、
 　コードの変更を他の人にレビューしてもらうために使われる機能のことです。
@@ -176,35 +206,9 @@ Pull Request（プルリクエスト）とは、Git などのバージョン管�
 	<p><a href="https://mich360.github.io/hello-github/git_code.html" target="_blank">コマンド確認する</a></p>
 	
 	<a id="10"></a>
-          <pre>
-	  <h4 id=" 1">GitHubにアップロードする方法</h4>
-	
-	  
-git init                                                   : 新ローカルリポジトリ初期化
- git add .                                                 : 変更ファイルをステージングエリアに追加
- git commit -m "first commit"                            : ステージングエリアの変更をコミット
- git remote add origin リポジトリのURL                  : URLを指定して、リモートリポジトリを追加 originという名前が使用、任意の名前を使うことができます
- git fetch origin                                                      : リモートリポジトリから情報を取得しますが、この段階ではローカルブランチには影響を与えません。
- git merge origin/main                                       : リモートリポジトリの main ブランチの変更をローカルの現在のブランチにマージします。この段階で main ブランチがない場合、新しいブランチが作成されます。
- git push -u origin main                                     :  ローカルの main ブランチをリモートリポジトリの main ブランチにプッシュします。-u オプションは、リモートリポジトリを追跡するように設定します。初回のプッシュ時に必要です。</pre>
-		<style>
-			.p,dt {
-				font-weight: bold;
-			}
-
-			dl,
-			dd {
-				font-size: 0.9rem;
-			}
-
-			dd {
-				margin-bottom: 1em;
-			}
-
-		</style>
-
-</pre>	
-これらの手順を実行することで、
+          
+	  <h4>GitHubにアップロードする方法</h4>
+	これらの手順を実行することで、
 <br>新しいローカルリポジトリを作成し、それをリモートリポジトリに関連付けてコードをアップロードできます。
 <br>ただし、手順の一部は状況によって変わることがありますので、適切に調整することが重要です。 
 <br>また、作業する前に適切なブランチを作成しておくことも大切です。
@@ -347,12 +351,12 @@ rm -rf /
 
 再帰的削除を使用する場合は、常に慎重に操作し、必要に応じてバックアップを取ることをお勧めします。
   </pre>
- <h2>GitHub リポジトリに変更内容を反映するには、以下の手順に従ってください：</h2>
+ <h2 id=" 1">GitHub リポジトリに変更内容を反映するには、以下の手順に従ってください：</h2>
 リポジトリのクローン:すでにクローン済みなので、ここではその手順を省略します。					    
-<li><code>cd vite-project       # プロジェクトディレクトリに移動</code></li>
-<li><code>git add .             # すべての変更をステージングエリアに追加</code></li>
-<li><code>git commit -m "Fix bug in feature X"  # 変更をコミット</code></li>
-<li><code>git push origin main  # リモートリポジトリの main ブランチにプッシュ</code></li>
+<li><code>cd vite-project </code>      　　　　　　　　　　　　　　# プロジェクトディレクトリに移動</li>
+<li><code>git add . </code>           　　　　　 　　　　　　　　　　　　# すべての変更をステージングエリアに追加</li>
+<li><code>git commit -m "Fix 　feature xx" </code> 　　　　# 変更をコミット</li>
+<li><code>git push origin main  </code>　　　　　　　　　　　　# リモートリポジトリの main ブランチにプッシュ</li>
 				    
 					    
 					    
