@@ -73,10 +73,13 @@ mkdir my_project
 cd my_project
 ( git init )
 </pre>
-<p>既存のプロジェクトを Git リポジトリとして初期化する場合:</p> 
+<p>[my_website] という既存のプロジェクトを Git リポジトリとして初期化する場合:</p> 
 <pre>
-cd existing_project
-(git init)
+cd my_website
+git init
+git add .
+git commit -m "Initial commit"
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　※共同開発者とコードを共有したいときに役立ちます
 </pre>
 	<h2>内容を最初に反映させる</h2>
 
