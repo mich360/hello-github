@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git コマンドとシステムコマンド</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .command {
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 5px solid #3498db;
+        }
+        .description {
+            margin-top: 5px;
+            color: #7f8c8d;
+        }
+        pre {
+            background-color: #e9ecef;
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Git コマンドとシステムコマンド</h1>
+    
+    <h2>Git コマンド</h2>
+    <div class="command">
+        <pre>git version                インストール確認</pre>
+        <p class="description">Git のバージョンを確認するコマンド。</p>
+        <pre>brew install git           インストール :macOS の場合（Homebrew を使用）</pre>
+    </div>
+
+    <div class="command">
+        <pre>git -v                    バージョンの確認</pre>
+        <p class="description">Git の詳細なバージョン情報を確認するコマンド。</p>
+    </div>
+
+    <div class="command">
+        <pre>cd                        最初にチェンジディレクトリー 移動して作業開始</pre>
+        <p class="description">作業するディレクトリに移動します。</p>
+    </div>
+
+    <div class="command">
+        <pre>git remote                リモートリポジトリの確認</pre>
+        <p class="description">設定されたリモートリポジトリを表示します。</p>
+    </div>
+
+    <div class="command">
+        <pre>git init                  新しい Git リポジトリを初期化</pre>
+        <p class="description">リポジトリの作成を開始します。</p>
+    </div>
+
+    <div class="command">
+        <pre>git init --bare           ベアリポジトリの作成（中央集権的）</pre>
+        <p class="description">作業ディレクトリなしのリポジトリを作成します。</p>
+    </div>
+
+    <div class="command">
+        <pre>git init --bare --share   共有リポジトリの作成</pre>
+        <p class="description">複数のユーザーがアクセスできる共有リポジトリを作成します。</p>
+    </div>
+
+    <div class="command">
+        <pre>git status                現在のリポジトリの状態を確認</pre>
+        <p class="description">現在のブランチやステージされたファイルの情報を表示します。</p>
+    </div>
+
+    <div class="command">
+        <pre>git add                   ステージングエリアにファイルを追加</pre>
+        <p class="description">変更したファイルを次のコミットに追加します。</p>
+    </div>
+
+    <div class="command">
+        <pre>git commit                コミットして変更を記録</pre>
+        <p class="description">変更をリポジトリに保存します。</p>
+    </div>
+
+    <div class="command">
+        <pre>git log                   コミット履歴の表示</pre>
+        <p class="description">過去のコミットを確認できます。</p>
+    </div>
+
+    <div class="command">
+        <pre>git clone                 リモートリポジトリのコピーを作成</pre>
+        <p class="description">指定した URL からリポジトリをクローンします。</p>
+    </div>
+
+    <div class="command">
+        <pre>git checkout              ブランチの作成や切り替え</pre>
+        <p class="description">新しいブランチを作成したり、切り替えます。</p>
+    </div>
+
+    <div class="command">
+        <pre>git merge                 ブランチの統合</pre>
+        <p class="description">別のブランチを現在のブランチにマージします。</p>
+    </div>
+
+    <h2>システムコマンド</h2>
+    <div class="command">
+        <pre>pwd                       現在の作業ディレクトリを表示</pre>
+        <p class="description">現在のディレクトリのパスを表示します。</p>
+    </div>
+
+    <div class="command">
+        <pre>mkdir                     新しいディレクトリを作成</pre>
+        <p class="description">新しいフォルダを作成します。</p>
+    </div>
+
+    <div class="command">
+        <pre>touch                     新しいファイルを作成</pre>
+        <p class="description">新しいファイルを作成します。</p>
+    </div>
+
+    <div class="command">
+        <pre>vim                       テキストエディタ（vi）</pre>
+        <p class="description">ファイルを開いて編集します。</p>
+    </div>
+
+    <div class="command">
+        <pre>cat                       ファイル内容を表示</pre>
+        <p class="description">ファイルの中身をターミナルで表示します。</p>
+    </div>
+
+    <div class="command">
+        <pre>ls                        ディレクトリ内容のリスト表示</pre>
+        <p class="description">現在のディレクトリのファイルとフォルダを表示します。</p>
+    </div>
+    <div class="command">
+        <pre>ls -l                     詳細情報付きでリスト表示</pre>
+        <p class="description">詳細情報（パーミッション、サイズ、更新日時など）を含めて表示します。</p>
+    </div>
+    <div class="command" style="color: rgb(132, 156, 34);"><pre>-rw-r--r--  1 user  staff  1234 Mar 11 10:00 file.txt
+drwxr-xr-x  5 user  staff   160 Mar 11 10:05 folder/                       例: ls -l  出力例:表示</pre>
+      <p class="description">説明:<br>
+         -rw-r--r-- → ファイルのアクセス権
+         1 → ハードリンクの数
+         user → 所有者
+         staff → 所属グループ<br>
+         1234 → ファイルサイズ（バイト単位）
+         Mar 11 10:00 → 最終更新日時
+         file.txt → ファイル名
+         ls -a ：
+        
+         </p>
+  </div>
+
+    <div class="command">
+        <pre>ls -a                     隠しファイルも表示</pre>
+        <p class="description">隠しファイルも含めて表示します。</p>
+    </div>
+    <div class="command" style="color: rgb(132, 156, 34);"><pre>.  ..  .bashrc  .git  Documents  Downloads                   例: ls -a 出力例</pre>
+      <p class="description"></p>説明:<br>
+      . → 現在のディレクトリ
+      .. → 1つ上のディレクトリ
+      .bashrc や .git のような . で始まる隠しファイルも表示される
+      
+  </div>
+  <div class="command">
+   <pre>ls -h            ：ファイルサイズを人間が読みやすい形式（KB, MB, GB）で表示</pre>
+
+   <pre>-rw-r--r--  1 user  staff   1.2K Mar 11 10:00 file.txt
+drwxr-xr-x  5 user  staff    4M Mar 11 10:05 folder/             出力例</pre>
+   <p class="description">説明:<br>
+      1.2K → 1.2 キロバイト
+      4M → 4 メガバイト
+      -h オプションがない場合、サイズはバイト単位で表示される (1234 など)</p>
+   </div>
+   <div class="command">
+      <pre>man            ：コマンドのマニュアルを表示</pre>
+      <p class="description">例: man ls<br>
+         説明: &emsp;ls コマンドの詳細な説明（オプションや使い方）を表示
+         終了方法: マニュアル表示中に q を押すと終了
+         </p>
+  </div>
+
+    <div class="command">
+        <pre>cd ..                     親ディレクトリに戻る</pre>
+        <p class="description">1つ上の階層に戻ります。</p>
+    </div>
+
+    <div class="command">
+        <pre>cd ~                      ホームディレクトリに移動</pre>
+        <p class="description">ユーザーのホームディレクトリに移動します。</p>
+    </div>
+
+    <div class="command">
+        <pre>date                      現在の日付と時刻を表示</pre>
+        <p class="description">現在のシステム日付と時刻を表示します。</p>
+    </div>
+
+    <div class="command">
+        <pre>cal                       カレンダーを表示</pre>
+        <p class="description">現在の月のカレンダーを表示します。</p>
+    </div>
+    <h3>ls コマンドは、以下のように一般的な構文で表せます</h3>
+    <div class="command">
+      <pre> ls  [オプション]  [ディレクトリ名]  </pre>
+      <pre>ls -l ~/Documents            → ~/Documents の中身を -l オプション付きで表示</pre>
+      <pre>ls -lh ~/Downloads            →~/Downloads 内のファイルサイズを KB/MB/GB 形式で表示</pre>
+      <p class="description">このように、ls [オプション] [ディレクトリ名] の形で使用できます！</p>
+  </div>
+
+</body>
+</html>
