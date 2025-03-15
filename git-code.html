@@ -105,7 +105,8 @@
     </div>
 
     <div class="command">
-        <pre>git merge                 ブランチの統合</pre>
+        <pre>git merge         ブランチの統合　　　　　　　# mainブランチに移動　　　git checkout main
+    　　　　　　　　　　　　　　　　　　　　　# featureブランチをmainにマージ　　git merge feature</pre>
         <p class="description">別のブランチを現在のブランチにマージします。</p>
     </div>
 
@@ -212,7 +213,55 @@ drwxr-xr-x  5 user  staff    4M Mar 11 10:05 folder/             出力例</pre>
       <pre>ls -l ~/Documents            → ~/Documents の中身を -l オプション付きで表示</pre>
       <pre>ls -lh ~/Downloads            →~/Downloads 内のファイルサイズを KB/MB/GB 形式で表示</pre>
       <p class="description">このように、ls [オプション] [ディレクトリ名] の形で使用できます！</p>
+  </div>-２１５
+  <h3>📌 .git フォルダの存在を確認する方法</h3>
+    <div class="command">
+      <pre>cd /path/to/your/repository     [ディレクトリへ移動]  </pre>
+      <pre>ls -a                          →  .  ..  .git  README.md  main.py 出力例</pre>
+      <pre>ls -la .git                    →  Git の設定や履歴が表示</pre>
+      <pre>git rev-parse --is-inside-work-tree                   →  true</pre>
+      <p class="description">Git リポジトリの場合は true、リポジトリでない場合はエラーが出る。</p>
   </div>
+  <h3>📌 Create repository! （ローカルでリポジトリを作成）</h3>
+  <div class="command">
+    <p class="description">1. 新しい Git リポジトリをローカルで作成</p>
+    <pre>        git init
+        ls -a         #確認</pre>
+    <p class="description">2. GitHub CLI でリポジトリ作成</p>
+    <pre>
+        gh repo create <リポジトリ名> --public    
+        brew install gh     # macOS   🔹 インストールされていない場合 GitHub CLI をインストール：
+        gh repo list        #確認　リモートリポジトリ一覧が表示される:</pre>  
+    <p class="description">3. GitHub にログイン（https://github.com/） 公式サイトで作成</p>
+    <pre>
+        git remote add origin <URL>            #を実行してローカルと連携</pre>             
 
+  </div>
+  <p class="description">🔹 新しいリポジトリを作るなら git init、GitHub に作るなら gh repo create が便利！</p>
+  ２４０
+  <h3>📝 git remote add origin &lt;URL> の利用例</h3>
+  <div class="command">
+    <pre># ローカルリポジトリを作成（または既存のプロジェクトフォルダに移動）
+        mkdir my_project && cd my_project
+        git init                            # Gitリポジトリを初期化
+
+        # リモートリポジトリを登録
+        git remote add origin https://github.com/user/repo.git
+
+        # ファイルを追加・コミット
+        git add .
+        git commit -m "Initial commit"
+
+        # リモートにプッシュ
+        git push -u origin main</pre>
+    <p class="description">✅ ローカルに既にあるプロジェクトを GitHub にアップロードする場合に使う！</p>
+</div>
+<h3>📝 git clone &lt;URL> の利用例</h3>
+<div class="command">
+    <pre>
+        git clone https://github.com/user/repo.git
+    </pre>
+    <p class="description">✅ リモートリポジトリのコピーをローカルに作成し、そのまま作業を開始できる！</p>
+</div>
 </body>
 </html>

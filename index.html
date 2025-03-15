@@ -39,8 +39,28 @@
 				font-size: 19px;
 				color: #bc1010;
 			}
+	table {
+		 width: 100%;
+		 border-collapse: collapse;
+		 margin: 20px 0;
+		 font-size: 18px;
+		 text-align: left;
+	}
+	th, td {
+		 border: 1px solid #ddd;
+		 padding: 10px;
+	}
+	th {
+		 background-color: #f4f4f4;
+	}
+ article{
+		max-width: 900px;
+		margin-left: auto;
+		margin-right: auto;
+		/* border: 1px solid coral; */
+ }
+</style>
 
- </style>
 </head>
 <body>
 		<header>
@@ -67,7 +87,7 @@
 	<a href="# 1"></a> -->
 	</nav>		
 		</header>
-    
+<article> 
 <div> 
 	<h1>GitHub</h1>
 	<h2>✅ 新規プロジェクトの場合</h2>
@@ -143,8 +163,7 @@ git add .
 git commit -m "Initial commit"
 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　※共同開発者とコードを共有したいときに役立ちます
 </pre>
-	<h2>内容を最初に反映させる</h2>
-
+	<p><a href="#10">以上のコマンドライン説明こちら</a></p>
 <dl>
   <dt>git init</dt>
     <dd>   : 新ローカルリポジトリ初期化</dd>
@@ -169,29 +188,130 @@ git commit -m "Initial commit"
 	<dd></dd>
  <dt>git init と create repository の違い</dt>
 	    <dd>git init は、新しい Git リポジトリを初期化するコマンドです。既存のディレクトリを Git リポジトリとして扱うために使用します。このコマンドを実行すると、そのディレクトリ内に<mark> .git という隠しフォルダが作成され、Git の管理下</mark>に置かれるようになります。</dd>
-	    <dd> create repository は Git ホスティングサービスで新しいリポジトリを作成する操作を指し、Git 自体のコマンドではありません。
-どちらも新しいリポジトリを作成するために使われますが、git init はローカルの操作、create repository はリモートの操作となります。</dd>
+	    <dd> クリエイト リポジトリ は Git ホスティングサービスで新しいリポジトリを作成する操作を指し、Git 自体のコマンドではありません。
+どちらも新しいリポジトリを作成するために使われますが、git init はローカルの操作、クリエイト リポジトリ はリモートの操作となります。</dd>
 </dl><br>
-	    <p><a href="#10">以上のコマンドライン説明こちら</a></p>
-	<h2><a href="# 1">GitHubに変更内容を反映させる方法</a></h2>
+<h2>Git と GitHub の違い</h2>
+<p>Git はソースコードのバージョン管理を行う分散型バージョン管理システムです。</p>
+<p>GitHub は、Git を利用したソースコード管理をオンラインで行うためのプラットフォームであり、リモートリポジトリをホスティングするサービスです。</p>
+	<h3>一般的な Pull Request の流れ</h3>
+<dl>
+<dt>/Pull Request（PR） とは、GitHub や GitLab などの リモートリポジトリ で、他の人に自分のコード変更をレビュー・マージ（統合）してもらうための リクエスト（依頼）</dt>
+<dt>1.ブランチの作成</dt>
+<dd>メインブランチ（main または master）から新しいブランチを作成し、そのブランチで作業を行います。</dd>
+<dt>2.変更の反映</dt>
+ <dd>作業が完了したら、自分のリモートリポジトリに変更を push します。
+</dd>
+<dt>3.Pull Request の作成</dt>
+ <dd>GitHub などの Git ホスティングサービスを利用し、自分のリポジトリから対象のリポジトリ（メインプロジェクト）に向けて Pull Request を送信します</dd>
+<dt>4.コードレビュー</dt>
+ <dd>プロジェクトのメンバーやコントリビューターが Pull Request をレビューし、コメントや指摘を行います。
+</dd>
+<dt>5.マージ（統合）</dt>
+ <dd>レビューが完了したら、リポジトリのオーナーが変更をマージし、コードを統合します。</dd> 
+</dl>
+<h2>リポジトリとは</h2>
+<dl>
+	<dt>リポジトリ（repository） は、管理するコードの集まりのことを指します。</dt>
+	<dd>ローカルリポジトリ：自分の PC 上にあるリポジトリ</dd>
+	<dd>リモートリポジトリ：サーバー上にあるリポジトリ（GitHub などで管理される）</dd>
+</dl>
+<span>Git は 分散型 バージョン管理システムであり、リモートリポジトリとローカルリポジトリの両方を使ってコードを管理します。</span>
+
+
+
+<h2>ローカルリポジトリ（Git .git フォルダ）とリモートリポジトリ（GitHub）の違い</h2>
+<table>
+<tr>
+	<th>項目</th>
+	<th>ローカルリポジトリ（.git フォルダ）</th>
+	<th>リモートリポジトリ（GitHub）</th>
+</tr>
+<tr>
+	<td>概要</td>
+	<td>自分の PC に保存されるリポジトリ</td>
+	<td>GitHub などのサーバー上で管理されるリポジトリ</td>
+</tr>
+<tr>
+	<td>保存場所</td>
+	<td>.git フォルダの中（ローカル環境）</td>
+	<td>GitHub や GitLab などのオンラインプラットフォーム</td>
+</tr>
+<tr>
+	<td>主な用途</td>
+	<td>ローカルでコードの変更を管理</td>
+	<td>チームでの共同作業やバックアップ</td>
+</tr>
+<tr>
+	<td>操作方法</td>
+	<td>git commit などで変更を記録</td>
+	<td>git push でリモートに反映</td>
+</tr>
+<tr>
+	<td>インターネット接続</td>
+	<td>不要（オフラインで作業可能）</td>
+	<td>必要（GitHub への push / pull 時）</td>
+</tr>
+<tr>
+	<td>共有</td>
+	<td>基本的に自分のみが使用</td>
+	<td>他の開発者とコードを共有可能</td>
+</tr>
+<tr>
+	<td>復元可能性</td>
+	<td>.git フォルダが削除されると復元が難しい</td>
+	<td>GitHub に push していれば復元可能</td>
+</tr>
+</table>
+<h3>ローカルリポジトリ（.git フォルダ）とは？</h3>
+<p>ローカルリポジトリは 自分の PC 上に作成される Git リポジトリ であり、コードの変更履歴を .git フォルダ内に保存します。</p>
+<dl>
+	<dt>✅ ローカルリポジトリの特徴</dt>
+	<dd>Git の基本単位：リポジトリのルートフォルダ内に .git フォルダがあり、そこで Git の履歴が管理される</dd>
+	<dd>オフライン作業が可能：インターネット接続なしで作業を進められる。</dd>
+	<dd>ローカルで履歴を管理：git commit で変更を保存し、ローカルでバージョン管理ができる。</dd>
+
+	<dt>📌 ローカルリポジトリの主なコマンド</dt>
+	<dd><pre>
+			git init                         # 新規リポジトリの作成
+			git add .                        # ファイルをステージングエリアに追加
+			git commit -m "コミットメッセージ"  # 変更を記録
+			git log                          # コミット履歴を確認
+
+
+	</pre></dd>
+</dl>
+<h3>リモートリポジトリ（GitHub など）とは？</h3>
+ <p>
+	リモートリポジトリは GitHub などのオンラインプラットフォーム上で管理されるリポジトリ です。<br>
+	複数人での開発やバックアップ、デプロイ時に利用されます。</p>
+
+	<dl>
+		<dt>✅ リモートリポジトリの特徴</dt>
+	
+		<dd>クラウド上で管理：GitHub、GitLab、Bitbucket などにホストされる。</dd>
+		<dd>共同開発が可能：他の開発者とコードを共有できる。</dd>
+		<dd></dd>
+		<dt>📌 リモートリポジトリの主なコマンド</dt>
+		<dd>ローカルのバックアップ：ローカルの .git フォルダを失っても、リモートに push していれば復元できる。<pre>
+			git remote add origin <リモートURL>     # リモートリポジトリを追加
+			git push origin main                   # ローカルの変更をリモートに反映
+			git pull origin main                   # リモートの最新の変更を取得
+			git clone <リモートURL>                 # リモートリポジトリをローカルにコピー
+
+		</pre></dd>
+	</dl>
+	<h3>ローカルリポジトリとリモートリポジトリの関係</h3>
 	<p>
-GitHubとは登録してGitを使う gitとgithubは違います。<br>
-gitはソースコードのバージョン管理<br>
-Pull Request（プルリクエスト）とは、Git などのバージョン管理システムで、<br>
-　コードの変更を他の人にレビューしてもらうために使われる機能のことです。<br>
-　主にオープンソースプロジェクトにおいて、自分が修正・改善したコードをメインのプロジェクトに取り込んでもらうために使用されます。<br>
-一般的な流れは以下のようになります。<br>
+通常の開発では ローカルリポジトリで作業し、リモートリポジトリへ push する流れ になります。<br>
 
-1-ブランチを作成して、そのブランチで作業を行います。ベースとなるmain(またはmaster)ブランチに新ブランチで機能追加。<br>
-2-作業が完了したら、自分のリモートリポジトリに変更を push します。<br>
-3-GitHub などの Git ホスティングサービスで、自分のリポジトリから対象のリポジトリに向けて Pull Request を送信します。<br>
-4-プロジェクトのメンバーやコントリビューターが Pull Request をレビューし、コメントや指摘を行います。<br>
-5-レビューが完了したら、対象のリポジトリのオーナーが変更をマージ（統合）します。<br>
-
-
-分散型 <br>
-リポジトリ（保管庫）は管理するコードの集まり、リモートリポジトリ　サバ―上、ローカルリポジトリ　自分PC
+1️⃣ ローカルで作業（git commit）<br>
+2️⃣ 変更をリモートリポジトリへ push<br>
+3️⃣ 他の開発者がリモートから pull して変更を反映<br>
+4️⃣ チームでコードを共有・レビュー（Pull Request）<br>
 	</p>
+<a href="# 1">GitHubに変更内容を反映させる方法</a>
+	
 	<h2><a href="https://mich360.github.io/hello-github/git_code.html" target="_blank"><b>gitコマンドみる！</b></a></h2>
 
     <h2>githubの画面操作</h2>
@@ -208,84 +328,134 @@ Pull Request（プルリクエスト）とは、Git などのバージョン管�
 		<p> ・ 新規にリポジトリを作成はリポジトリ名は「（ユーザー名または組織名）.github.io」として</p>
 		<!--<p> ・ リポジトリができたら、[ Setup up Deskto ] を確認してください</p>
 		<p> ・ 「Setup in Desktop」というボタンがありますので、クリックしてください。すると、GitHub Desktopが自動的に立ち上がり、リポジトリをクローンしてくれます</p>-->
-		<h3>公開（GitHub PagesでURLつくる）</h3>
-		<p> ・ 公開したらGitHub Pagesで　URL　が習得しサイト作られる！[GitHub Pages] は、PHP、Ruby、Python などのサーバーサイド言語はサポートしていませんHtmlで実行してみる
-		<pre>公開するリポリジトリィのindex.htmlファイルを押し　→　Settings　→　<br>下の方GitHub Pages　→　Source　→　 Select branch　→　<br> Branch:main▼　→　Save　→　 URLができる
-		<br>途中で<mark> [browser …]</mark>の窓は必ず選択すること</pre>
+		<h3>公開（GitHub PagesでURLつくる）</h3>３３１
+		<p>公開したらGitHub Pagesで　URL　が習得しサイト作られる！[GitHub Pages] は、PHP、Ruby、Python などのサーバーサイド言語はサポートしていませんHtmlで実行してみる
+		<p>公開するリポリジトリィのindex.htmlファイルを押し　→　Settings　→　下の方GitHub Pages　→　Source　→　 Select branch　→　<br> Branch:main▼　→　Save　→　 URLができる
+		<br>途中で<mark> [browser …]</mark>の窓は必ず選択すること</p>
 		完成したらこの様な文字をが出る。
 		<pre>Your site is published at<code> https://mich360.github.[*ここにNameが反映*].github.io/</code></pre></p>
-		<p>Webページをインターネット上に公開、完成です。
-		</p>
+		<p>Webページをインターネット上に公開、完成です。</p>
 		<h3>githubリポジトリを削除</h3>
-		
 		<p>githubで削除する方法、削除したいリポジトリの中で </p>
 		<p>settings→下部の方にDanger Zone→Delete this repositoryを→リポジトリ名を入力</p>
-
-		<p><a href="https://github.com/search" target="_blank">検索github内[通常検索]</a></p>
-
-		<h2>GitHub  Desktop  簡単にエラーなく</h2><!--ここから　GitHub  Desktop ===========================-->
+      <p><a href="https://github.com/search" target="_blank">検索github内[通常検索]</a></p>
+      <h2>GitHub  Desktop  簡単にエラーなく</h2><!--ここから　GitHub  Desktop ===========================-->
 
 		<P>GUI (Graphical User Interface:マウスメイン・指の操作が )　
 	   <BR>CUI（Character User Interface:キーボードで操作いわゆる黒画面）</P>
 		<P>通常は、画面左上　🔽 　から　Add  Clone Repository と進む  作業するフォルダーから始める</P>
 		<p>初めてGitHubにアップロードする場合にはGitHub Desktop起動後メニューバーの「File」→「New Repository」と進む</p>
 		<p>リポジトリを作成するには、まず「Create New Repository」を記述ます。
-		<br><pre>Name(リポジトリ名)は「xxx.github.io」の形になるもので、Description(説明)の欄には任意で説明を加えます。
+		<br>Name(リポジトリ名)は「xxx.github.io」の形になるもので、Description(説明)の欄には任意で説明を加えます。
 		<br><mark>Local Path(ローカルパス)はデスクトップ</mark>のローカル環境を指定します。
 		<br>Initialize this repository with a README：最初のコミットをmd ファイル付きで作成します。今回READMEを編集するのでチェックマークをつけましょう。
 		<br>Git Ignoreよく分からなければそのままで大丈夫です。
-		<br>Licenceはよく分からなければ「MIT License」(免責事項と著作権表示義務)を選択しておきましょう。
+		<br>Licenceはよく分からなければ「MIT License」(免責事項と著作権表示義務)を選択しておきましょう。</p>
 		
 <a href="https://style.potepan.com/articles/8753.html"target="_blank" rel="noopener noreferrer">参考サイト１</a>
 <a href="https://ferret-plus.com/8498?page=3"target="_blank" rel="noopener noreferrer">参考サイト２</a>
 <a href="https://digitaldiy.jp/article/programming/5141/"target="_blank" rel="noopener noreferrer">参考サイト３</a>
-	　　　</pre>
-		<pre>
-　　　Git ignore：バージョン管理で保存したくない、ローカルリポジトリ内で無視するファイルを指定するためのカスタムファイルを追加します License   ：リポジトリの LICENSE ファイルにオープンソースライセンスを追加します
-	    
-		リポジトリを作成したら、それに対して開発を進めていくことになります。
-		ローカル環境にあるリポジトリでファイルの追加・更新・削除を行って、コミット(リポジトリに登録)します。
-		コミットはバックアップのように一日一回行うといったものでなく、 タイミングは機能追加したり、バグ修正したりといった意味があるまとまりで行います。
-		ローカル環境のフォルダに任意のコードや画像を入れると、GitHub Desktopのほうで反映されます。
-		
-　　　　　ここで変更内容に対するコメントを入力すると、「Commit to xxx」ボタンが押せるようになります。
-　　　　　クリックしてコミットを行います。
-　　　　　変更した内容やコメントは、Historyで確認できるようになっています。
+	３５８　<h2>📌 .gitignore とは？</h2>
+		<p style="color: blue;">.gitignore は Git に無視させるファイルやフォルダを指定する設定ファイル です。<br>
+			このファイルに記載されたファイル・フォルダは git add しても Git に追跡されません。<br>
+		.gitignore を適切に設定することで、リポジトリを整理し、不要なファイルの管理を省略し、セキュリティリスクを防ぎ、開発の効率を向上させることができます。プロジェクトごとに適切な .gitignore を設定して、スムーズな開発を進めましょう
+		<ul>
+<li>Gitignore：バージョン管理で保存したくないファイルを指定 .gitignore ファイル作成、ローカルリポジトリ内で無視するファイルを定義します。</li>
+<li>License ：リポジトリの LICENSE ファイルにオープンソースライセンスを追加し、使用許諾を明確にします。</li>
 
-　　　　　2. 同期してみよう
-　　　　　ここで注意しないといけないのが、 変更内容はコミットではまだローカルのリポジトリーにあるだけということです。
-　　　　　ローカルのリポジトリーの内容を GitHub のリポジトリーに反映する必要があります。
+			<li style="list-style: none;">リポジトリを作成したら、それに対して開発を進めていくことになります。</li>
+
+			<li style="list-style: none;"></li>ローカル環境にあるリポジトリでファイルの追加・更新・削除を行って、コミット(リポジトリに登録)します。</li>
+			<li style="list-style: none;"></li>コミットはバックアップのように一日一回行うといったものでなく、 タイミングは機能追加したり、バグ修正したりといった意味があるまとまりで行います。</li>
+			<li style="list-style: none;"></li>ローカル環境のフォルダに任意のコードや画像を入れると、GitHub Desktopのほうで反映されます。</li>
+			<br><br>
+
+			<li style="list-style: none;"></li>ここで変更内容に対するコメントを入力すると、「Commit to xxx」ボタンが押せるようになります。</li>
+			<li style="list-style: none;"></li>クリックしてコミットを行います。</li>
+			<li style="list-style: none;"></li>変更した内容やコメントは、Historyで確認できるようになっています。</li>
+
+			<li style="list-style: none;"></li>同期してみよう</li>
+			<li style="list-style: none;"></li>ここで注意しないといけないのが、 変更内容はコミットではまだローカルのリポジトリーにあるだけということです。</li>
+			<li style="list-style: none;"></li>ローカルのリポジトリーの内容を GitHub のリポジトリーに反映する必要があります。</li>
+</ul>
+
 <a href="https://digitaldiy.jp/article/programming/5141/#GitHub" target="_blank"rel="noopener noreferrer">参考サイト</a><!--https://www.marorika.com/entry/rel-noopener-noreferrer-->
 <a href="https://ferret-plus.com/8498/"target="_blank" rel="noopener noreferrer">参考サイト</a>
 <a href="/"target="_blank" rel="noopener noreferrer"></a>
-画面右上にある<mark>「Publish Repository」を実行することにより GitHub のリポジトリーと同期</mark>し、変更が反映されます。
-		</pre>
+<p>画面右上にある<mark>「Publish Repository」を実行することにより GitHub のリポジトリーと同期</mark>し、変更が反映されます。</p>
 		<p>画面の英訳</p>
-		<pre>
-	edit=編集収納 repository=［保存］場所・宝倉 branch=枝、拡張する changes=変更
-	Summary（required）=まとめ(必須)  description=説明fetch=連れて［取って］くる
+		<pre style="color: darkred;">
+	edit=編集収納   
+	repository=［保存］場所・宝倉   
+	branch=枝、拡張する    
+	changes=変更
+	Summary（required）=まとめ(必須)             
+	description=説明
+	fetch=連れて［取って］くる
 	fetch origin=オリジン(原点)の取得  fetch origin=最後に取得したもの
 	current=現在の、最新の、進行中の
 	revision =リビジョンとは、改訂、改正、改訂版などの意味、公開後に変更や修正 ・改訂版のことや、複数の識別する通し番号（リビジョン番号）を指す
-	1.共有リポジトリから情報を個人リポジトリにPull
-	2.プログラムを変更し、変更を個人リポジトリにCommit
-	3.個人リポジトリから変更記録を共有リポジトリにPush
+
+	1.共有リポジトリから情報を個人リポジトリに  Pull
+	2.プログラムを変更し、変更を個人リポジトリに  Commit
+	3.個人リポジトリから変更記録を共有リポジトリに  Push
 	*このPull→Commit→Pushを複数人で同時並行的に行*</pre>
 		<a href="https://www.youtube.com/watch?v=kftqAritHyc" target="_blank">参考youtube</a>
 		</p>SNSの機能も！
 		<a href="https://github.com/lightsound/html-css-class/tree/master/004_Sidebar-responsive">しまぶーさんのhamburger</a>
 </div>
 <hr>
-<h3>V.S.の左側、アクティビティ３番目でソース管理を行うつまりGit管理できる</h3>
-    <p>最初にgithubを起動しリポジトリを作り、HTML のURLをコピーして
-        <br>V.S.を開き上部のターミナルクリックして開き　git -v  と打ち　バージョンの確認して
-        <br> git clone の後にコピーしたURLを貼り付ける
-        <br>README.mdファイル化できる
-        <br>アントラックバー　　U  → 　＋  クリックして更新　下の方に　１ ↓ が出る　クリック
-    </p>
-    <p>リポジトリーをgithubで確認できる</p>
-	<h3>git</h3>
-	<p><a href="https://mich360.github.io/hello-github/git_code.html" target="_blank">コマンド確認する</a></p>
+４０８
+
+<h2>GitHubでリポジトリを作成し、VS Codeでクローンする手順</h2>
+<ol>
+	<li>GitHubでリポジトリを作成</li>
+	<ul><li>ー</li></ul>
+	<li>VS Codeを開く</li>
+	<ul><li>VS Code を起動し、上部の 「ターミナル」メニュー をクリック → 「新しいターミナル」 を開く。</li></ul>
+	<li>Gitがインストールされているか確認</li>
+	  <ul>
+		<li>ターミナルで以下のコマンドを実行し、Git のバージョンを確認する。
+			<pre>git --version</pre>
+		</li>
+		<li>バージョン番号（例: git version 2.XX.X）が表示されれば、Git は正常にインストールされている。</li>
+		<li>もし command not found と表示された場合、Git をインストールする必要がある。
+		</li>
+	   </ul>
+	<li>リポジトリをクローン（ローカルにコピー）する</li>
+	<ul>
+		<li>ターミナルで以下のコマンドを入力し、コピーしたリポジトリのURLを貼り付ける
+			<pre>git clone <コピーしたURL></pre>
+		</li>
+		<li>実行すると、現在のディレクトリ内にリポジトリのフォルダが作成される。</li>
+		<li></li>
+	</ul>
+	<li>README.md ファイルの作成（※GitHubで作成した場合は省略可能）</li>
+	  <ul><li>VS Code で README.md を作成し、リポジトリ内に保存する。</li></ul>
+	<li>変更を Git に追加（ステージング）する</li>
+	   <ul><li>VS Code の左側の「ソース管理（Source Control）」アイコン（Gitのマーク）をクリックする。</li>
+		    <li>U（Untracked）」と表示されるファイルがある場合、その横の + をクリックし、ステージングする。</li>
+		</ul>		 
+	<li>コミットする</li>
+	<ul>
+		<li>下の方に 1 ↓（コミット待ちの変更の数）が表示される。</li>
+		<li>コミットメッセージ」を入力し、「✔（チェックマーク）」 をクリックしてコミットする。
+		</li>
+	</ul>
+	<li>リモートリポジトリにプッシュする（GitHub に変更を反映）</li>
+	 <ul>
+		<li>ターミナルで以下のコマンドを実行し、リモートリポジトリに変更を反映する。
+		<pre>git push origin main</pre>
+			</li>
+		<li>main はデフォルトのブランチ名。環境によっては master の場合もある。
+		</li>
+	 </ul>
+	<li>GitHubで変更を確認する</li>
+	<ul>
+		<li>GitHub のリポジトリページを開き、更新されたファイルが反映されていることを確認する。</li>
+	</ul>
+</ol>
+	<p><a href="https://mich360.github.io/hello-github/git_code.html" target="_blank">gitコマンド確認する</a></p>
 	
 	<a id="10"></a>
           
@@ -295,31 +465,29 @@ Pull Request（プルリクエスト）とは、Git などのバージョン管�
 <br>ただし、手順の一部は状況によって変わることがありますので、適切に調整することが重要です。 
 <br>また、作業する前に適切なブランチを作成しておくことも大切です。
 <br>ただし、新しい開発ライン（ブランチ）を作成して進める場合は、以下の手順を追加してください。
-<pre>
+<p>
 新しいブランチを作成する
-             git checkout -b 新しいブランチ名
-
-新しいブランチで作業を行い、変更をコミットする
+           <pre>git checkout -b 新しいブランチ名</pre>  
+新しいブランチで作業を行い、変更をコミットする<br>
 リモートリポジトリに新しいブランチをプッシュする
-             git push origin 新しいブランチ名
-</pre>
+           <pre>git push origin 新しいブランチ名</pre>
+</p>
 このようにして、新しいブランチを作成し、それをリモートリポジトリにプッシュすることができます。
 <br>ブランチを使用することで、複数の開発ラインを同時に進めたり、特定の機能や修正を別々に開発することが容易になります。
 <pre>        
 	      git remote rm origin
 </pre> 
 を実行で、リモートリポジトリの origin という名前の設定が削除されます。
-<p>このコマンドを実行することで、以前のリモートリポジトリとの関連付けが解除されます。
+<span>このコマンドを実行することで、以前のリモートリポジトリとの関連付けが解除されます。
 <br>もし新しいプロジェクトや作業を開始する際に、以前のリモートリポジトリとは別のリモートリポジトリと関連付けたい場合や、
 <br>以前のリモートリポジトリの設定が誤っていた場合には、実行してリモートリポジトリの関連付けを解除することは有用かもしれません。
 <br>ただし、注意点として、一度関連付けたリモートリポジトリを解除すると、それまで関連付けていた履歴や設定が失われる可能性があるため、
 <br>慎重に行う必要があります。また、以前のリモートリポジトリと関連付ける予定がない場合にのみ実行してください。
 <br>したがって、以前のリモートリポジトリとは関連付けたくない場合に git remote rm origin コマンド。			
-<br><a href=" https://chat.openai.com/c/bdfabd34-b891-4ed6-aaf0-32731be994e7">Chat AI</a></p>
+<br><a href=" https://chat.openai.com/c/bdfabd34-b891-4ed6-aaf0-32731be994e7">Chat AI</a></span>
 <h3><a href="https://mich360.github.io/hello-github/git_code.html" target="_blank"><b>gitコマンドみる！</b></a></h3>
+
 	
-	<p class="p">コマンド例:</p>
-	　　<h4 id=" 2">コマンド</h4>
 	<dl>
 		<dt>fetchとは</dt>
 		<dd>リモートリポジトリの最新の変更をローカルに取得し、変更内容や衝突の有無を確認することができます。</dd>
@@ -443,65 +611,83 @@ Git のリモートリポジトリ設定を削除:
 					    
     <p><a href="https://mich360.github.io/hello-github/git_code.html">コマンド続きはこちら</a></p>
 
-	<hr>
-	<h3>ローカルリポジトリでブランチを作成</h3>
-      <pre>
-ブランチを作成するために特別なリモートリポジトリが必要ではありません。ローカルリポジトリでブランチを作成できます。以下は、新しいブランチを作成するGitコマンドの例です：
- code
-git branch new-branch-name
+
+	<h2>ブランチ作成</h2>
+	<h3>柔軟性や安全性、バージョン管理が効率的な ローカルリポジトリでブランチを作成</h3>
+ブランチを作成するために特別なリモートリポジトリが必要ではありません。ローカルリポジトリでブランチを作成できます。以下は、新しいブランチを作成するGitコマンドの例です：<pre>code
+
+git branch new-branch-name      </pre>
 	      
 これにより、"new-branch-name" という名前の新しいブランチが作成されます。作成したブランチに切り替えるには、次のコマンドを使用します：
 
- code
-git checkout new-branch-name
+<pre>code
+
+ git checkout new-branch-name       </pre>
 または、Gitの新しいバージョンでは以下の方法も利用できます：
-code
-git switch new-branch-name
+<pre>code
+
+git switch new-branch-name      </pre>
 このようにして、リモートリポジトリがなくてもローカルでブランチを作成し、作業を進めることができます。ただし、リモートリポジトリを使用する場合、ブランチをリモートリポジトリにプッシュして共有することができます。
 
 
-　code　　　　git checkout -b branch-name:
+　 <pre>code　　　
+	
+	　git checkout -b branch-name:   </pre>
 このコマンドは、新しいブランチを作成し、それに切り替える一連の操作を一度に行います。ブランチが作成されると、自動的にその新しいブランチに切り替わります。これにより、新しいブランチでの作業がすぐに開始できます。	      
-      </pre>
+
      <hr>
  <div>
 	<h3><a href="https://techacademy.jp/magazine/10274">git pullとは </a> </h3>
-	<p>実例として <mark>sample</mark>という名前のリポジトリを追加する、GitHub上でリモートリポジトリを作成するには、以下のコマンドを打ち込む。</p>
-	<pre><code>git remote add origin git@github.com:mich360/<mark>sample</mark>.git</code></pre>
-	<p>（mich360/の部分は自分のユーザー名）アカウント名、<mark>sample</mark>.gitはリポジトリ名、を意味します。</p>
-	<p>originはエイリアス、リモートリポジトリで標準的使われるリポジトリ別名です。</p>
-	<p>git@github.com:はサイトURL'github.com'に対して操作する</p>
-		
-		
-	<p>リポジトリ内は新ファイルが入っています。
-		<br>それではpullしていきましょうローカルリポジトリ内で、以下のように打ち込んでください
-		<pre><code>git pull origin　main</code></pre>
-		<br>するとリモートリポジトリ内がローカルリポジトリにも反映。
+	<p>GitHub 上で sample という名前のリモートリポジトリを作成するには、まず GitHub のウェブサイトで新しいリポジトリを作成する必要があります。その後、ローカルリポジトリにリモートリポジトリを登録するには、以下のコマンドを実行します。</p>
+	<pre><code>git remote add origin git@github.com:mich360/sample.git</code></pre>
+	<p>このコマンドにより、既に GitHub 上に作成された sample リポジトリを、ローカルリポジトリのリモートリポジトリとして登録できます。</p>
+
+
+  <p>
+	mich360/ の部分は自分の GitHub ユーザー名（アカウント名） を意味し、sample.git は リモートリポジトリの名前 を指します。
+
+origin は エイリアス（別名） であり、リモートリポジトリを参照する際に標準的に使用される名称です。
+
+git@github.com: の部分は、GitHub の SSH URL の形式 であり、github.com 上のリポジトリに対して操作を行うことを示します。
+
+リモートリポジトリ内には 新しいファイルが追加されています。
+それでは、最新の変更を取得するために git pull を実行しましょう。
+
+ローカルリポジトリ内で、以下のコマンドを入力してください。
+<pre><code>git pull origin main</code></pre>
+
+※ main の部分は、リモートリポジトリのデフォルトブランチ（main または master）に応じて変更してください。
   </p>
-	 <pre>
-		 git remote remove origin　  リモートリポジトリの削除:について
+	<p>削除 -接続が削除され　完全に消える訳でない</p>
+		<p><pre>git remote remove origin　</pre>リモートリポジトリの削除:について</p> 
 			上記の例では、originという名前のリモートリポジトリを削除しています。
 			以下の2つのコマンドは同じ結果をもたらします:
+			<pre>
 			* git remote remove <remote-name>
 			* git remote rm <remote-name>
-
 	 </pre>
 	
 <h3><a href="https://techacademy.jp/magazine/10271">git pushとは</a></h3>
-<pre>最初に、ローカルの main ブランチに移動します。
+<p class="p">最初に、ローカルの main ブランチに移動します。</p>
+<pre>
 code :  git checkout main</pre>
-<span style="font-size:1.3em;color: blue"> はい、長いので先に要約すると、以下です masterはmainと同じです</span>				
-<br><span style="font-size:1.3em;color: blue">git push origin main と git push origin main:main の両方とも、ローカルの main ブランチの内容をリモートの main ブランチにプッシュするコマンドです。</span>				
- <p>リモートリポジトリへプッシュする
+<span style="font-size:1em;color: blue"> はい、</span>				
+<br><span style="font-size:1em;color: blue">git push origin main と git push origin main:main の両方とも、ローカルの main ブランチの内容をリモートの main ブランチにプッシュするコマンドです。</span>	
+<p class="p">リモートリポジトリへプッシュする</p>			
+ <p>
 <b>git push origin master:master</b>と <b>git push origin master</b>の違いは以下の通りです:
 
- </p><p><pre>git push origin master:master:</pre>
+ </p><pre>
+	git push origin master:master
+</pre>
+このコマンドは、ローカルの master ブランチをリモートリポジトリの master ブランチにプッシュするためのものです。
 
-master:masterの部分は「ローカルブランチ名:リモートブランチ名」を意味します。
-このコマンドは、ローカルのmasterブランチの内容をリモートリポジトリのmasterブランチにプッシュします。
-つまり、ローカルのmasterブランチの変更をリモートのmasterブランチに反映させることが目的です。
-
-</p><p><pre>git push origin master</pre>	 
+git push：リモートリポジトリに変更を送信するコマンド
+origin：プッシュ先のリモートリポジトリ（通常、git remote add origin <URL> で設定）
+master:master：「ローカルブランチ名:リモートブランチ名」 の形式
+最初の master：ローカルリポジトリの master ブランチ
+後ろの master：リモートリポジトリの master ブランチ</p>
+<p class="p">通常は git push origin master だけで ローカルの master をリモートの master にプッシュ できます。</p><pre>git push origin master</pre>	 
 	 
 	 
 <p>
@@ -509,32 +695,22 @@ master:masterの部分は「ローカルブランチ名:リモートブランチ
 リモートリポジトリのデフォルトブランチは通常、originという名前のリモートリポジトリのmasterブランチです。
 リモートリポジトリのデフォルトブランチにプッシュすることで、ローカルのmasterブランチの変更をリモートリポジトリに反映させることができます。
 </p> <br>
+<p class="p">
+git push origin master:master と git push origin master の使い分け<br>
+<pre> git push origin master:master</pre><br>
+→ リモートの特定のブランチに明示的にプッシュする場合に使用。<br>
+→ 例：ローカルの feature ブランチをリモートの development ブランチにプッシュしたい場合は、<pre>git push origin feature:development </pre>のように指定。<br>
+<pre> git push origin master</pre><br>
+→ リモートのデフォルトブランチ（通常 origin/master）にプッシュする場合に使用。<br>
+→ 通常の運用ではこの形式が一般的<br><br>
 
-<p>要約すると、git push origin master:masterは、ローカルのmasterブランチの内容をリモートのmasterブランチに明示的にプッシュするためのコマンドです。一方、git push origin masterは、ローカルのmasterブランチの内容をリモートリポジトリのデフォルトブランチ（通常はoriginのmasterブランチ）にプッシュするためのコマンドです。
+使い分けのポイント<br>
 
-
-
-
+複数のブランチを操作する場合 → git push origin ローカルブランチ:リモートブランチ<br>
+デフォルトブランチにそのままプッシュする場合 → git push origin ブランチ名<br>
+チームの開発フローやリモートのブランチ構成に応じて適切なコマンドを選択する。<br>
 </p>
-<p>
-具体的にどう使い分けますか</p>
-<p>
-git push origin master:masterとgit push origin masterの使い分けは、リモートリポジトリの構成やワークフローによって異なります。</p>
-
-<p><pre>git push origin master:masterの使いどころ:</pre></p>
-<p>
-リモートリポジトリに複数のブランチが存在し、特定のブランチに変更を反映させたい場合に使用します。
-ローカルのmasterブランチ以外のブランチの変更をリモートの特定のブランチにプッシュする必要がある場合に使用します。
-例えば、ローカルのfeatureブランチの変更をリモートのdevelopmentブランチにプッシュする場合、git push origin feature:developmentというように使用します。
-
-<p><pre>git push origin masterの使いどころ:</pre></p>
-<p>
-リモートリポジトリに単一のデフォルトブランチが存在し、そのブランチに変更を反映させたい場合に使用します。
-ローカルのmasterブランチの変更をリモートリポジトリのデフォルトブランチにプッシュする必要がある場合に使用します。
-通常、リモートリポジトリのデフォルトブランチはoriginのmasterブランチです。そのため、単にgit push origin masterとコマンドを実行するだけで、ローカルのmasterブランチの変更がリモートのデフォルトブランチにプッシュされます。
-
-使用方法の選択に関しては、チームの開発フローやプロジェクトの要件に応じて行われます。複数のブランチを操作する場合や、リモートリポジトリのデフォルトブランチ以外に変更を反映させる場合には、適切なブランチ名を指定したgit push origin <local-branch>:<remote-branch>の形式を使用します。一方、デフォルトブランチに変更を反映させる場合には、git push origin <local-branch>のようにシンプルにコマンドを実行します。	 
-	 </p>
+</article>	
 </div>
 	</body>
 </html> 
